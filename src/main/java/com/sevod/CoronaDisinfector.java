@@ -2,8 +2,8 @@ package com.sevod;
 
 public class CoronaDisinfector {
 
-    private Announcer announcer = new ConsoleAnnouncer();
-    private Policeman policeman = new PolicemanImpl();
+    private Announcer announcer = ObjectFactory.getInstance().createObject(Announcer.class);
+    private Policeman policeman = ObjectFactory.getInstance().createObject(Policeman.class);
 
     public void start (Room room){
         announcer.announce("Начинаем дезинфекцию, все вон!");
