@@ -1,9 +1,15 @@
 package com.sevod;
 
+import java.io.FileNotFoundException;
+import java.lang.reflect.InvocationTargetException;
+
 public class CoronaDisinfector {
 
     private Announcer announcer = ObjectFactory.getInstance().createObject(Announcer.class);
     private Policeman policeman = ObjectFactory.getInstance().createObject(Policeman.class);
+
+    public CoronaDisinfector() throws FileNotFoundException, IllegalAccessException, NoSuchMethodException, InstantiationException, InvocationTargetException {
+    }
 
     public void start (Room room){
         announcer.announce("Начинаем дезинфекцию, все вон!");
